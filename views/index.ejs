@@ -41,17 +41,13 @@
                 <p class="lead">CrypMango is a website that shows you the current prices of various cryptocurrencies
                     like Bitcoin, Ethereum, and more. You can easily check the latest prices and track how they're
                     changing over time. It's a great way to stay updated on the cryptocurrency market!</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-                </div>
             </div>
         </div>
     </div>
 
-    <div class="container mt-5 mb-5 cryptosearch">
+    <div class="container col-xxl-8 mt-2 mb-5 cryptosearch">
         <h1 class="text-center mb-4">Crypto Price Checker</h1>
-        <form action="/checkPrice" method="post">
+        <form action="/checkPrice" id="cryptoForm" method="post">
             <div class="form-group">
                 <label for="cryptoInput">Select cryptocurrency:</label>
                 <select class="form-control" id="cryptoInput" name="selectedCrypto">
@@ -65,14 +61,13 @@
         <% if(locals.symbol){ %>
         <div id="priceCard" class="card mt-4">
             <div class="card-body">
-                <h5 class="card-title" id="cryptoName"><%= locals.symbol %></h5>
-                <p class="card-text" id="cryptoPrice"><%= locals.price %></p>
+                <h5 class="card-title" id="cryptoName">Symbol : <%= locals.symbol %></h5>
+                <p class="card-text" id="cryptoPrice">Last trade price : <%= locals.price %>$</p>
             </div>
         </div>
     </div>
-    <% }else{ %>
-        <h3>Select a currency</h3>
-        <% } %>
+    <% } %>
+        
 
     <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -80,7 +75,7 @@
       <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 CryptMango, Teama</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
